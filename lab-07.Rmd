@@ -33,7 +33,15 @@ evals %>%
 ggplot(data = evals, mapping = aes(x = score)) +
   geom_histogram(bins = 30) + 
   labs(x = "Score", y = "Frequency" )
+                   
+```
 
+The mean score being 4.17 means that the students rated the courses/professors really highly. The median score is 4.3. The data is also skewed towards the right, or positively skewed. I would not have expected the data to be positively skewed because I would have expected the scores to be more varied, so more random.
+
+
+2.  Visualize and describe the relationship between `score` and `bty_avg` using `geom_point()` to represent the data. 
+
+```{r scatterplot}
 ggplot(data = evals, mapping = aes(x = bty_avg, y = score)) + 
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
@@ -43,20 +51,9 @@ ggplot(data = evals, mapping = aes(x = bty_avg, y = score)) +
   geom_jitter() +
   geom_smooth(method = "lm", se = FALSE) +
   labs(title = "Relationship between 'Average beauty rating of professors' and 'Score'", x = "Average Beauty Rating", y = "Score")
-                   
 ```
-
-The mean score being 4.17 means that the students rated the courses/professors really highly. The median score is 4.3. The data is also skewed towards the right, or positively skewed. I would not have expected the data to be positively skewed because I would have expected the scores to be more varied, so more random.
 
 The scatter plot shows that there is no correlation between scores and the average beauty rating. The jitter randomises the data even more, there are more clusters in the data than in the scatter plot so it shows the variation in the data.
-
-2.  Visualize and describe the relationship between `score` and `bty_avg` using `geom_point()` to represent the data. 
-
-```{r scatterplot}
-# add code here
-```
-
-*Add your narrative and other details here.*
 
 # Exercise 2: Simple Linear regression with a numerical predictor
 
